@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.box h2 {
+    display: block;
+    margin: 5% auto 0 auto;
+    text-transform: uppercase;
+}
+
+.box h2::after {
+    display: block;
+    content: 'ººº';
+    margin: 0;
+    color: #ff5656;
+    font-size: 30px;
+}
+
+.cards img {
+    max-width: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-gap: 2%;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+    height: 99%;
+}
+
+.card img {
+    width: 100%;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.card:hover img {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px;
+    margin: 0;
+    background: rgba(0, 0, 0, .55);
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.card:hover p {
+    bottom: -80px;
+    opacity: 0;
+}
+
+.card span {
+    color: #ff5656;
+    font-weight: 500;
+}
+
+.icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.icons li {
+    list-style: none;
+}
+
+.icons li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background: #fff;
+    color: #ff5656;
+    margin: 0 5px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateY(270px);
+    opacity: 0;
+}
+
+.icons li a .fa {
+    transition: 0.5s;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.icons li a:hover .fa {
+    transform: rotateY(360deg);
+}
+
+.card:hover .icons li a {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.card:hover .icons li:nth-child(1) a {
+    transition-delay: 0s;
+}
+
+.card:hover .icons li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.card:hover .icons li:nth-child(3) a {
+    transition-delay: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .box {
+        margin: 10% auto;
+    }
+    .cards {
+        grid-template-columns: auto;
+        grid-gap: 1%;
+    }
+    .card p {
+        text-align: center;
+    }
+}
